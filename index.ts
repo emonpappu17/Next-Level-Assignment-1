@@ -10,7 +10,11 @@ function filterByRating(items: { title: string; rating: number }[]): { title: st
 }
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
-    return arrays.flat()
+    const newArray: T[] = [];
+    for (const arr of arrays) {
+        newArray.push(...arr)
+    }
+    return newArray
 }
 
 class Vehicle {
